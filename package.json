@@ -1,0 +1,33 @@
+{
+  "name": "estore",
+  "version": "1.0.0",
+  "engines": {
+    "node": "16.13.2"
+  },
+  "description": "Project - Mongoose Store",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srikemburu/eStore.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srikemburu/eStore/issues"
+  },
+  "homepage": "https://github.com/srikemburu/eStore#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-react-views": "^0.11.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.2.6",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  }
+}
