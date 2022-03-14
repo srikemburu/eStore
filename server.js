@@ -17,12 +17,11 @@ app.engine('jsx', require('express-react-views').createEngine())
 
 // Mount Express Middleware
 
-// invoked for any requests passed to this router
-// app.use((req, res, next) => {
-//   res.locals.data = {}
-//   // console.log("server js " + res.locals.data)
-//   next()
-// }) // Creates res.locals.data
+//invoked for any requests passed to this router
+app.use((req, res, next) => {
+  res.locals.data = {}
+  next()
+}) // Creates res.locals.data
 
 app.use(express.urlencoded({ extended: true })) // Creates req.body
 app.use(methodOverride('_method')); // Allows us to override methods
@@ -30,11 +29,12 @@ app.use(express.static('public')); // Allows us to have Static Files
 
 // Mounts our RESTFUL/INDUCES ROUTES at /fruits
 // we can use this router inside of our server.js as Middleware
-// app.use('/fruits', require('./controllers/routeController.js')); 
 
-app.get('/', function (req, res) {
-    res.send('hello world')
-})
+app.use('/', require('./controllers/routeController.js')); 
+
+// app.get('/', function (req, res) {
+//     res.send('hello world')
+// })
 
 // Listen on PORT
 app.listen(PORT, () => {
