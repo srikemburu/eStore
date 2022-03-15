@@ -30,7 +30,7 @@ app.use(express.static('public')); // Allows us to have Static Files
 // Mounts our RESTFUL/INDUCES ROUTES at /fruits
 // we can use this router inside of our server.js as Middleware
 
-app.use('/', require('./controllers/routeController.js')); 
+app.use('/products', require('./controllers/routeController.js')); 
 
 // app.get('/', function (req, res) {
 //     res.send('hello world')

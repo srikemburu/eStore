@@ -5,18 +5,19 @@ const React = require('react');
           const { products } = this.props;
           return (
                   <div>
-                      {/* <link rel="stylesheet" href="/css/app.css"/>   */}
+                      <link rel="stylesheet" href="/css/app.css"/>  
                       <h1>Products Index Page</h1>
                         {this.props.products.map((product,i) => {
                             return <li key={i}>
                              <a href={`/products/${product.id}`}>{product.pName}</a>
-                            {' '}is {' '}{product.pDescription}.{product.pPrice}.{product.pQuantity}
-                            
+                            {' '}is {' '}{product.pDescription}.{' Price is $'}{product.pPrice}.{' Quantity is '}{product.pQty}            
 
-                            <form action={`/products/${product._id}?_method=DELETE`} method="POST">
+                            {/* <form action={`/products/${product._id}?_method=DELETE`} method="POST">
                                  <input type="submit" value="DELETE"/>
                             </form>
-                            <a href={`/products/${product._id}/edit`}>Edit This product</a><br/><br/>
+                            <a href={`/products/${product._id}/edit`}>Edit This product</a> */}
+                            <br/><br/>
+
                             </li>
                         })}
 

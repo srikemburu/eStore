@@ -16,33 +16,39 @@ router.use(function (req, res, next) {
     next()
   })
 
-
 // add routes
-// will handle any request that ends in /????
+// will handle any request that ends in /url_path
 // depends on where the router is "use()'d"
 
-// Index
 // router.get('/', function (req, res) {
 //     res.send(`<h1>router controller hello world</h1>`)
 // })
 
+// Index
 router.get('/', dataController.index, viewController.index);
 
+// New screen
 router.get('/new', viewController.new);
 
 // Delete
-// router.delete('/:id', dataController.destroy, viewController.redirectHome);
+ router.delete('/:id', dataController.destroy, viewController.redirectHome);
 
 // Update
-// router.put('/:id', dataController.update, viewController.redirectShow);
-// Create
+ router.put('/:id', dataController.update, viewController.redirectShow);
 
+// Create
 router.post('/new', dataController.create, viewController.redirectHome);
 
+
+
 // Edit
-// router.get('/:id/edit', dataController.show, viewController.edit);
+ router.get('/:id/edit', dataController.show, viewController.edit);
+
 // Show
-// router.get('/:id', dataController.show, viewController.show);
+ router.get('/:id', dataController.show, viewController.show);
+
+ // Buy
+router.patch('/:id', dataController.buy, viewController.redirectShow);
 
  // export router
 module.exports = router; 
