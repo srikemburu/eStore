@@ -6,8 +6,8 @@ const express = require('express');
 
 const router = express.Router();
 
-// const viewController = require('./viewController.js')
-// const dataController = require('./dataController.js')
+const viewController = require('./viewController.js')
+const dataController = require('./dataController.js')
 
 // simple logger for this router's requests
 // all requests to this router will first hit this middleware
@@ -22,12 +22,27 @@ router.use(function (req, res, next) {
 // depends on where the router is "use()'d"
 
 // Index
-router.get('/', function (req, res) {
-    res.send(`<h1>router controller hello world</h1>`)
-})
+// router.get('/', function (req, res) {
+//     res.send(`<h1>router controller hello world</h1>`)
+// })
 
-//router.get('/', dataController.index, viewController.index);
+router.get('/', dataController.index, viewController.index);
 
+router.get('/new', viewController.new);
+
+// Delete
+// router.delete('/:id', dataController.destroy, viewController.redirectHome);
+
+// Update
+// router.put('/:id', dataController.update, viewController.redirectShow);
+// Create
+
+router.post('/new', dataController.create, viewController.redirectHome);
+
+// Edit
+// router.get('/:id/edit', dataController.show, viewController.edit);
+// Show
+// router.get('/:id', dataController.show, viewController.show);
 
  // export router
 module.exports = router; 
