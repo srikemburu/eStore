@@ -9,18 +9,16 @@ const React = require('react');
                       <h1>Products Index Page</h1>
                         {this.props.products.map((product,i) => {
                             return <li key={i}>
-                             <a href={`/products/${product.id}`}>{product.pName}</a>
-                            {' '}is {' '}{product.pDescription}.{' Price is $'}{product.pPrice}.{' Quantity is '}{product.pQty}            
-
-                            {/* <form action={`/products/${product._id}?_method=DELETE`} method="POST">
-                                 <input type="submit" value="DELETE"/>
-                            </form>
-                            <a href={`/products/${product._id}/edit`}>Edit This product</a> */}
+                            {product.pName}
+                            {' '}is {' '}{product.pDescription}.{' Price is $'}{product.pPrice}.{' Quantity is '}{product.pQty}
+                             <br/><br/>
+                            <a href= {`/products/${product.id}`}>
+                                <img src={product.pImg}  width="200" height="200"/>
+                            </a>   
                             <br/><br/>
-
                             </li>
-                        })}
-
+                            })
+                        }
                         <nav>    
                              <a href="/products/new">Create a New product</a>
                          </nav>

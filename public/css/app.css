@@ -1,6 +1,16 @@
 html {
     background-color: white;
     text-align: center;
-    font-size: medium;
-   
+    font-size: medium;   
+}
+div {
+    text-align:center;
+}
+button {
+    margin: 1%;
+}
+
+form {  
+    display: inline-block;
+    text-align:right;
 }

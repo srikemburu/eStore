@@ -32,10 +32,6 @@ app.use(express.static('public')); // Allows us to have Static Files
 
 app.use('/products', require('./controllers/routeController.js')); 
 
-// app.get('/', function (req, res) {
-//     res.send('hello world')
-// })
-
 // Listen on PORT
 app.listen(PORT, () => {
   console.log('Listening on port ', PORT)

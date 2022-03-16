@@ -2,7 +2,6 @@ const Product= require('../models/products.js');
 
 const dataController = {
     index(req, res, next){
-        console.log("data controller index")
         Product.find({}, (err, allProducts) => {
           if(err){
             res.status(404).send({
@@ -17,7 +16,6 @@ const dataController = {
       },
       create(req, res, next){
         // Use Model to create Product Document
-        console.log("data controller create")
         Product.create(req.body, (err, createdProduct) => {
             // Once created - respond to client
             if(err){
@@ -31,7 +29,6 @@ const dataController = {
         });
       },
       show(req, res, next){
-        console.log("data controller show")
         Product.findById(req.params.id, (err, foundProduct)=>{
           if(err){
             res.status(404).send({
@@ -44,7 +41,6 @@ const dataController = {
         })
       },
       update(req, res, next){
-        console.log("data controller update")
         Product.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedProduct) => {
           if(err){
             res.status(404).send({
@@ -57,7 +53,6 @@ const dataController = {
         });
       },
       destroy(req, res, next){
-        console.log("data controller delete")
         Product.findByIdAndRemove(req.params.id, (err, product) => {
           if(err){
             res.status(404).send({
@@ -70,7 +65,6 @@ const dataController = {
         });
       },
       buy(req, res, next){
-        console.log("data controller buy")
         Product.findByIdAndUpdate(req.params.id, {$inc: {pQty: -1}}, { new: true }, (err, buyProd) => {
           if(err){
             res.status(404).send({

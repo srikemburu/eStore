@@ -20,10 +20,6 @@ router.use(function (req, res, next) {
 // will handle any request that ends in /url_path
 // depends on where the router is "use()'d"
 
-// router.get('/', function (req, res) {
-//     res.send(`<h1>router controller hello world</h1>`)
-// })
-
 // Index
 router.get('/', dataController.index, viewController.index);
 
@@ -38,8 +34,6 @@ router.get('/new', viewController.new);
 
 // Create
 router.post('/new', dataController.create, viewController.redirectHome);
-
-
 
 // Edit
  router.get('/:id/edit', dataController.show, viewController.edit);
