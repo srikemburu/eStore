@@ -10,6 +10,10 @@ button {
     margin: 1%;
 }
 
+p {
+    font-size: medium;
+}
+
 form {  
     display: inline-block;
     text-align:right;

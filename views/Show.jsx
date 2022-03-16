@@ -7,8 +7,12 @@ class Show extends React.Component {
         <div>
            <link rel="stylesheet" href="/css/app.css"/>  
           <h1>Products show page</h1>
-           The { this.props.product.pName } is { this.props.product.pDescription }.{' Price is $'}{ this.props.product.pPrice}<br/><br/>
-           {this.props.product.pQty > 0 ? ' Quantity is ' + this.props.product.pQty : "**OUT OF STOCK**"} <br/><br/>
+            <h3>
+                The { this.props.product.pName } is { this.props.product.pDescription }.{' Price is $'}{ this.props.product.pPrice}<br/><br/>
+                {this.props.product.pQty > 0 ? ' Quantity is ' + this.props.product.pQty : "**OUT OF STOCK**"} <br/><br/>
+            </h3>
+
+            <img src={this.props.product.pImg}  width="300" height="300"/> <br/><br/>
 
             <nav>
                 <a href={`/products/${product._id}/edit`}>  
@@ -16,7 +20,7 @@ class Show extends React.Component {
                 </a>
 
                 <a href="/products">
-                <button>Back</button>
+                <button>Back to Index</button>
                 </a>    
             </nav>
 

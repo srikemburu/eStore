@@ -11,15 +11,15 @@ class Edit extends React.Component{
          {/* See the Layout takes in a prop called Title and we pass Edit Page to it  note: comments can't go first or last in  jsx return*/}
       
             <form action={`/products/${this.props.product._id}?_method=PUT`} method="POST">        
-                Product Name: <input type="text" name="pName" defaultValue={this.props.product.pName}/><br/><br/>
+                Product Name: <input type="text" name="pName" defaultValue={this.props.product.pName} required/><br/><br/>
 
-                Product Description: <input type="text" name="pDescription"  defaultValue={this.props.product.pDescription}/><br/><br/>
+                Product Description: <input type="text" name="pDescription"  defaultValue={this.props.product.pDescription} required/><br/><br/>
 
-                Product Image: <input type="text" name="pImg" defaultValue={this.props.product.pImg}/><br/><br/>
+                Product Image: <input type="text" name="pImg" defaultValue={this.props.product.pImg} required/><br/><br/>
 
-                Product Price: <input type="number" step="0.01" name="pPrice" min = "0" defaultValue={this.props.product.pPrice}/><br/><br/>
+                Product Price: <input type="number" step="0.01" name="pPrice" min = "0" defaultValue={this.props.product.pPrice} required/><br/><br/>
 
-                Product Quantity: <input type="number" name="pQty" min = "0" defaultValue={this.props.product.pQty}/><br/><br/>
+                Product Quantity: <input type="number" name="pQty" min = "0" defaultValue={this.props.product.pQty} required/><br/><br/>
                 <br/>
                 <div>
                 <input type="submit" value="Submit Changes"/>
