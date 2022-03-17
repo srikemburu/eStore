@@ -9,7 +9,7 @@ class Show extends React.Component {
           <h1>Products show page</h1>
             <h3>
                 The { this.props.product.pName } is { this.props.product.pDescription }.{' Price is $'}{ this.props.product.pPrice}<br/><br/>
-                {this.props.product.pQty > 0 ? ' Quantity is ' + this.props.product.pQty : "**OUT OF STOCK**"} <br/><br/>
+                {this.props.product.pQty > 0 ? ' Quantity is ' + this.props.product.pQty : <p style={{color:"red"}}>"**OUT OF STOCK**"</p>} <br/>    
             </h3>
 
             <img src={this.props.product.pImg}  width="300" height="300"/> <br/><br/>
