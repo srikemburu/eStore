@@ -1,4 +1,5 @@
 const Product= require('../models/products.js');
+const User= require('../models/users.js');
 
 const dataController = {
     index(req, res, next){
@@ -8,7 +9,6 @@ const dataController = {
               msg: err.message
             })
           }else {
-            // console.log(allFruits)
             res.locals.data.products = allProducts
             next()
           }
@@ -66,7 +66,7 @@ const dataController = {
       },
       buy(req, res, next){
         Product.findByIdAndUpdate(req.params.id, {$inc: {pQty: -1}}, { new: true }, (err, buyProd) => {
-          if(err){
+            if(err){
             res.status(404).send({
               msg: err.message
             })
@@ -75,8 +75,7 @@ const dataController = {
             next()
           }
         });
-      }
-     
+      }     
 }
 
 module.exports = dataController
