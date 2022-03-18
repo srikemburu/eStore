@@ -57,3 +57,4 @@ I would love to add user model, cart model, item model, and an order model to ma
 ### heroku link: https://skproducts.herokuapp.com/products
 ### github link: https://github.com/srikemburu/eStore
 ### github pages : https://srikemburu.github.io/eStore/
+### youtube link: https://youtu.be/MNMZOaVz9Ak
