@@ -1,4 +1,4 @@
-# Mongoose Store/Project 2
+# Mongoose Store
 
 ## This is a Product Inventory Manager with full CRUD using Mongoose
 ***
@@ -16,18 +16,17 @@ It has the following functionality:
 4. Show Page for Individual Products
 5. Show Page has a Buy button which will reduce the number of items in stock by 1 each time it's pressed.
 
-**The User Stories**
+### The User Stories
 ***
 
 1. When a user goes to the **/products** route they will see an index of product.The product info of each product rendered to the page. The index page has a **Create button** to create new products.
 
-2. When a user clicks on the image of a product, they will be taken to that product's show page, and will display the product's name and image. This show page has an **Edit button** to make updates to the product, a **Delete Button** to delete a product. It also has a **Back to Index** button to go back to the index page. 
+2. When a user clicks on the image of a product, they will be taken to that product's show page, and will display the product's name and image. This show page has an **Edit button** to make updates to the product, a **Delete Button** to delete a product. It also has a **Back to Index** button to go back to the index page. The **Buy** button will reduce the number of items in stock by 1 each time it's pressed until quantity gets to zero at which point it will display **Out of Stock** message and unrender the Buy button.
 
-**Seed Data**
+### Seed Data
 ***
 
 I have put the seed data in a file called seed.js. By running **Node seed.js** in the terminal, the seed data gets loaded into the database.
-
 
 ### Technologies Used
 ***
@@ -55,8 +54,6 @@ I have put the seed data in a file called seed.js. By running **Node seed.js** i
 
 I would love to add user model, cart model, item model, and an order model to make this a fully functional eCommerce store.
 
-## heroku link: https://skproducts.herokuapp.com/products
-
-## github link: https://github.com/srikemburu/eStore
-
-## github pages : https://srikemburu.github.io/eStore/
+### heroku link: https://skproducts.herokuapp.com/products
+### github link: https://github.com/srikemburu/eStore
+### github pages : https://srikemburu.github.io/eStore/
