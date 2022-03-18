@@ -18,7 +18,6 @@ class Show extends React.Component {
                 <a href={`/products/${product._id}/edit`}>  
                   <button>Edit This Product</button>
                 </a>
-
                 <a href="/products">
                 <button>Back to Index</button>
                 </a>    

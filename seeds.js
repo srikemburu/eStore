@@ -29,7 +29,6 @@ const seedProducts = [
 ]
 
   const seedDB = async () => {
-    //   await Product.deleteMany({})
       await Product.insertMany(seedProducts)
   }
 
