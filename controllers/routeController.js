@@ -26,6 +26,9 @@ router.get('/', dataController.index, viewController.index);
 // New screen
 router.get('/new', viewController.new);
 
+// Users Index
+router.get('/user', dataController.userIndex, viewController.userIndex);
+
 // Delete
  router.delete('/:id', dataController.destroy, viewController.redirectHome);
 

@@ -14,6 +14,18 @@ const dataController = {
           }
         });
       },
+      userIndex(req, res, next){
+        User.find({}, (err, allUsers) => {
+          if(err){
+            res.status(404).send({
+              msg: err.message
+            })
+          }else {
+            res.locals.data.users = allUsers
+            next()
+          }
+        });
+      },
       create(req, res, next){
         // Use Model to create Product Document
         Product.create(req.body, (err, createdProduct) => {
@@ -71,11 +83,36 @@ const dataController = {
               msg: err.message
             })
           } else {
-            res.locals.data.product = buyProd
+            res.locals.data.product = buyProd          
+            const cartInfo = {
+                itemName: buyProd.pName,
+                price: buyProd.pPrice,
+                quantity: 1
+              }
+
+              const filter = { userName: 'Sri Kemburu'};
+              const update = { "$push": {"shopCart": cartInfo}};
+              const opts = { new: true};
+
+              // Converting object to JSON string
+              var str = JSON.stringify(cartInfo, null, 4);
+
+                User.findOneAndUpdate(filter, update, opts, (err,updatedUser) => {
+                if(err){
+                  res.status(404).send({
+                    msg: err.message
+                  })
+                } else {
+                  res.locals.data.user = updatedUser
+                  next()
+                } 
+              })
+
             next()
-          }
+          } 
         });
-      }     
+
+    }   //buy
 }
 
 module.exports = dataController

@@ -2,7 +2,7 @@ const React = require('react')
 
 class Show extends React.Component {
    render () {
-    const { product } = this.props;
+   const { product } = this.props;
     return (
         <div>
            <link rel="stylesheet" href="/css/app.css"/>  
@@ -21,6 +21,9 @@ class Show extends React.Component {
                 <a href="/products">
                 <button>Back to Index</button>
                 </a>    
+                <a href="/products/user">
+                <button>Show Cart</button>
+                </a>    
             </nav>
 
             <form style={{margin:"1%"}} action={`/products/${product._id}?_method=DELETE`} method="POST">
@@ -29,7 +32,7 @@ class Show extends React.Component {
            
             <form action={`/products/${this.props.product._id}?_method=PATCH`} method="POST">
                  {this.props.product.pQty > 0 ? <input type="submit" value="Buy"/> : null}
-            </form>         
+            </form>
         </div>
       );
     }

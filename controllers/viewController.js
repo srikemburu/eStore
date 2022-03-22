@@ -4,6 +4,9 @@ const viewController = {
     index(req, res, next){
         res.render('Index', res.locals.data)
       },
+    userIndex(req, res, next){
+        res.render('IndexUser', res.locals.data)
+      },
     new(req, res, next){
         res.render('New')
       },
